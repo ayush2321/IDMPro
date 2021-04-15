@@ -1,0 +1,89 @@
+
+.top-sec-2
+{background-color: black;
+
+  /* background-color: #cdfffc; */
+  padding:20px 30px 20px;
+}
+ /* havorthlogo img */
+ .logo-img
+ {
+   height: 100px;
+   width: 100px;
+   border-radius: 100%;
+ }
+ /* Navigation bar */
+ /* Style the links inside the navigation bar */
+ .topnav a {
+   float: left;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+   font-size: 1.0rem;
+   color: white;
+   font-weight: bold;
+ }
+
+ /* Change the color of links on hover */
+ .topnav a:hover {
+   /* background-color: #ddd; */
+   /* background-color: ; */
+ }
+ /* Add a color to the active/current link */
+ .topnav a.active {
+   background-color: #4CAF50;
+   color: white;
+ }
+ /* Right-aligned section inside the top navigation */
+ .topnav-right {
+   float: right;
+ }
+
+/* top-sec-3 */
+.top-sec-3
+{
+  /* padding: 2% 7% 2% 7%; */
+  padding-top: 170px ;
+  background: url("images/img.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 500px;
+}
+p{
+  margin-top: 20px;
+  font-size:30px;
+  font-family: sans-serif;
+  color: white;
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+.title{
+  color: white;
+}
+/* carousel */
+
+.carousel-inner
+{
+text-align: center;
+}
+
+.carousel-control-next-icon
+{
+  background-color: black;
+}
+.carousel-control-prev-icon
+{
+  background-color: black;
+}
+.round {
+  border-radius: 50%;
+}
+.carousel-img
+{
+height: 350px;
+margin: auto;
+width: 70%;
+}

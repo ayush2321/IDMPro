@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class userLogin
@@ -48,8 +49,9 @@ public class UserLogin extends HttpServlet {
 			ps.setString(2, pwd);
 			ResultSet rs=ps.executeQuery();
 			if(rs.next())
-			{ 
-					RequestDispatcher rd=request.getRequestDispatcher("index.html");
+			{ 		HttpSession session=request.getSession();
+					session.setAttribute("id", id);
+					RequestDispatcher rd=request.getRequestDispatcher("Admin.html");
 					rd.include(request, response);
 					
 					

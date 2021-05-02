@@ -1,0 +1,39 @@
+body{
+
+}
+.page-title{
+  position: relative;
+  height: 150px;
+  background-image: url("images/banner_image.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.course-details-area{
+  margin-top: 50px;
+}
+.courses-details-img{
+  width:500px;
+
+}
+.course-heading{
+  margin-top: 20px;
+}
+.course-details{
+  margin-top: 30px;
+  margin-bottom: 18px;
+}
+.enroll{
+  margin-left: 20px;
+}
+.content{
+  display: none;
+}
+.contentshow{
+  display: block;
+}
+/* .content{
+  pointer-events: none;
+opacity: 0;
+background: #CCC;
+} */

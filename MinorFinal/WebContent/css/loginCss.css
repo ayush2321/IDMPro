@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: rgb(219, 226, 226);
+
+}
+.row
+{
+
+    background :white;
+    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    box-shadow: 12px 12px 22px 5px  grey;
+
+
+}
+img{
+    width: 90%;
+    margin-top: 0px   ;
+
+}
+.btn1
+{
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    color: blanchedalmond;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.btn1:hover{
+    background: white;
+    border: 1px solid;
+    color: black;
+}
+.container
+{
+    margin-top: 50px;
+}
+

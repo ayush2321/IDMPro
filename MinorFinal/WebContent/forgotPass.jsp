@@ -24,29 +24,24 @@
 
 
                   
-				<form action="UserLogin.jsp">
+<form action="verifyUser.jsp">
 
                       <div class="form-row">
                           <div class="col-lg-7">
-                            <input type="text"  placeholder="Email-Address"class="form-control my-3 p-4" name="id"/>
+                            <input type="text"  placeholder="ENTER REGISTERED EMAIL"class="form-control my-3 p-4" name="id"/>
                           </div>
                       </div>
                       <div class="form-row">
                         <div class="col-lg-7">
-                          <input type="password"  placeholder="*********"class="form-control" name="pwd">
+                          <input type="text"  placeholder="ENTER YOUR STUDENT ID"class="form-control" name="stdId">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-lg-7">
-                      <input  type="submit" name="ulogin" class="btn1 mt-3 mb-0" value="LOGIN "  > 
+                      <input  type="submit" name="ulogin" class="btn1 mt-3 mb-0" value="SUBMIT"  > 
                         </div>
                     </div>
-                   <!--  <div class="form-row">
-                    <div class="col-lg-7">
-                      <input type="submit" name="alogin" class="btn1 mt-3 mb-2" value="LOGIN AS ADMIN"/>
-                      </div>
-                      </div> -->
-                    <br><a href="forgotPass.jsp">Forgot password?</a><p>Dont have an account?<a href="register.html"> Register here </a></p>
+                  
                       </form>                   
               </div>
           </div>

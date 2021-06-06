@@ -1,43 +1,24 @@
+<%@page import="java.sql.PreparedStatement"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
- <meta charset="UTF-8" />
+  <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="css/admin.css" />
     <title>Welcome Admin</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
- <div class="d-flex" id="wrapper">
+<div class="d-flex" >
         <!-- Sidebar -->
-        <div class="bg-white" id="sidebar-wrapper">
-            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
-                    class="fas fa-user-secret me-2"></i>Admin panel</div>
-            <div class="list-group list-group-flush my-3">
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i
-                        class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-               
-                <a href="manageClasses.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-paperclip me-2"></i>Manage classes</a>
-                
-                        <a href="BatchManagePanel.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                            class="fas fa-shopping-cart me-2"></i>Batch manage</a>
-                         <a href="manageExUsers.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                            class="fas fa-shopping-cart me-2"></i>Manage Existing Users</a>
-                        <a href="CoursePanel.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                            class="fas fa-shopping-cart me-2"></i>Manage courses</a>
-                            <a href="StudyMaterial.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                            class="fas fa-shopping-cart me-2"></i>Add-Study-Material</a>
-                <a href="Logout.jsp" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
-                        class="fas fa-power-off me-2"></i>Logout</a>
-            </div>
-        </div>
+        	
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
@@ -59,11 +40,23 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                               <%
-                               
-								String s=(String)session.getAttribute("id");
-								%> 
-                                <i class="fas fa-user me-2"></i><%=s %>
+                                  <%
+                              //---------Session Verification---------//
+                                session=request.getSession();
+                                String checkId=(String)session.getAttribute("id");  
+                                  
+                                 if(checkId==null){
+                                	response.sendRedirect("index.html");
+                                 }
+
+                                //---------Session Verification Ends---------//
+                                
+                                
+                                %>
+                                
+                                
+                                
+                                <i class="fas fa-user me-2"></i><%= checkId%>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="Admin.jsp">Profile</a></li>
@@ -80,7 +73,7 @@
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">8000+</h3>
+                               <h3 class="fs-2">8000+</h3>
                                 <p class="fs-5">Students</p>
                             </div>
                             <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
@@ -90,8 +83,8 @@
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">40+</h3>
-                                <p class="fs-5">Teachers</p>
+                                 <h3 class="fs-2">40+</h3>
+                                <p class="fs-5">Teachers</p>   
                             </div>
                             <i
                                 class="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"></i>
@@ -102,7 +95,7 @@
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
                                 <h3 class="fs-2">20+</h3>
-                                <p class="fs-5">Centres</p>
+                                <p class="fs-5">Centres</p>  
                             </div>
                             <a><i class="fa fa-twitter "></i></a>
                         </div>
@@ -111,7 +104,7 @@
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">5000+</h3>
+                              <h3 class="fs-2">5000+</h3>
                                 <p class="fs-5">Placements</p>
                             </div>
                             <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>
@@ -122,8 +115,8 @@
                 <div class="row my-5">
                     <h3 class="fs-4 mb-3">Student</h3>
                     <div class="col">
-                        <table class="table bg-white rounded shadow-sm  table-hover">
-                            <thead>
+                        <table class="table bg-white rounded shadow-sm  table-hover " >
+                           <thead>
                                 <tr>
                                     <th scope="col" >#</th>
                                     <th scope="col">Student name</th>
@@ -132,44 +125,65 @@
                                     <th scope="col">Address</th>
                                     <th scope="col">Gender</th>
                                     <th scope="col">City</th>
+                                    <th scope="col">Pass</th>
+                                    <th scope="col">Course Name</th>
+                                    <th scope="col">Student Id</th>
+                                    <th scope="col">Batch Id</th>
+                                   <!--   <th scope="col">CourseName</th>-->
                                 </tr>
                             </thead>
- <%@page import="java.sql.ResultSet"%>
+                            
+<%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@include file="dataBase.jsp"%>
 <%
-
 int c=1;
+int tempPass=10001;
 String qr="select * from user";
 Statement st=con.createStatement();
 ResultSet rs=st.executeQuery(qr);
 if(rs.next())
-{    
-	
+{
 	do
-	{	
-		String id=rs.getString("email");
+	{
+		String email=rs.getString("email");
 		String pass=rs.getString("pass");
 		String name=rs.getString("name");
 		String mob=rs.getString("mob");
 		String add=rs.getString("address");
 		String gender=rs.getString("gender");
 		String city=rs.getString("city");
-	
-		%>
-<tbody>
+		String courseName=rs.getString("courseName");
+		String stdId=rs.getString("stdId");
+		String batchId=rs.getString("batchId");
+				%>
+		
+		
+
                             
-                                <tr>
-                                    <th scope="row"><%=c++ %></th>
-                                    <td><%=name%></td>
-                                    <td><%=id %></td>                             
-                                    <td><%=mob%></td>
-                                    <td><%=add%></td>
-                                    <td><%=gender%></td>
-                                    <td><%=city%></td>
-                                </tr>  
+                            <tbody >
+                            
+                               
+									<tr>
+									<th scope="row"><%=c++%></th>
+									
+									<td><input type=text name=name value="<%=name%>" readonly/></td> 
+    								<td><input type=text name=email value="<%=email %>" /></td>
+									<td><input type=text name=mob  value="<%=mob %>" /></td> 
+									<td><input type=text name=address value="<%=add%>" /></td> 
+									<td><input type=text name=gender value="<%=gender %>" /></td> 
+    								<td><input type=text name=city value="<%=city %>" /></td>
+    								<td><input type=text name=pass value="<%=pass %>" /></td> 
+    								<td><input type=text name=pass value="<%=courseName%>" /></td> 
+    								<td><input type=text name=pass value="<%=stdId %>" /></td> 
+    								<td><input type=text name=pass value="<%=batchId%>" /></td> 
+																	
+									
+								                                	</tr> 
+                                 
                                 <%
 	}while(rs.next());
+
 }
 
 
@@ -177,8 +191,37 @@ else
 {
 	out.println("No Records are there");
 }
+
+%>
+
+<tr>
+    <th scope="row"></th>
+     <form action="AddStudent.jsp">
+    <td><input type=text name=name placeholder="Enter name" /></td> 
+    <td><input type=text name=email placeholder="Enter Email"/></td>
+	<td><input type=text name=mob  placeholder="Enter contact"/></td> 
+	<td><input type=text name=address placeholder="Enter address"/></td> 
+	<td><input type=text name=gender placeholder="Enter gender"/></td> 
+    <td><input type=text name=city placeholder="Enter city"/></td>
+    <td><input type=text name=pass placeholder="Enter default password"/></td> 
+    <td><input type=text name=courseName placeholder="Enter Course Name"/></td> 
+     <td><input type=text name=stdId placeholder="Enter studentId"/></td> 
+      <td><input type=text name=batchId placeholder="Enter batchId"/></td>     
+     <td><button>add</button></td>
+    </tr>
+    </form>
+
+<%
+
+
+
+
+
+
 con.close();
 %>
+
+                                
                             </tbody>
                         </table>
                     </div>
@@ -200,4 +243,4 @@ con.close();
         };
     </script>
 </body>
-</html>
+</html> 

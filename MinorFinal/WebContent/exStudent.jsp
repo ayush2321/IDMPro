@@ -1,3 +1,4 @@
+
 <html>
 
     <head>
@@ -17,37 +18,32 @@
                   <img src="images/loginimg2.jpg" class="img-fluid"alt="">
               </div>
               <div class="col-lg-7 px-5 pt-5">
-                  <h1 class="font-weight-bold py-3">Logo</h1>
+                  <h1 class="font-weight-bold py-3">Welcome</h1>
                   <div ></div>
 
-                  <h4 >Sign in to your account as</h4>
+                  <h4 >Fill Detils To Continue</h4>
 
 
                   
-				<form action="UserLogin.jsp">
+<form action="	UserLogin.jsp">
 
                       <div class="form-row">
                           <div class="col-lg-7">
-                            <input type="text"  placeholder="Email-Address"class="form-control my-3 p-4" name="id"/>
+                            <input type="text"  placeholder="Enter Your Student Id"class="form-control my-3 p-4" name="stdId"/>
                           </div>
                       </div>
                       <div class="form-row">
                         <div class="col-lg-7">
-                          <input type="password"  placeholder="*********"class="form-control" name="pwd">
+                          <input type="text"  placeholder="Enter registered email id" class="form-control" name="emailId">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-lg-7">
-                      <input  type="submit" name="ulogin" class="btn1 mt-3 mb-0" value="LOGIN "  > 
+                      <input  type="submit" name="exStudentVerification.jsp" class="btn1 mt-3 mb-0" value="Submit"  > 
                         </div>
                     </div>
-                   <!--  <div class="form-row">
-                    <div class="col-lg-7">
-                      <input type="submit" name="alogin" class="btn1 mt-3 mb-2" value="LOGIN AS ADMIN"/>
-                      </div>
-                      </div> -->
-                    <br><a href="forgotPass.jsp">Forgot password?</a><p>Dont have an account?<a href="register.html"> Register here </a></p>
-                      </form>                   
+                   
+                                         </form>                   
               </div>
           </div>
       </div>

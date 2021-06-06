@@ -31,15 +31,22 @@ public class RegUser extends HttpServlet {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/minor","root","root");
-			String qr="insert into user values(?,?,?,?,?,?,?)";
+			String qr="insert into user values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement ps=con.prepareStatement(qr);
-			ps.setString(1, email);
-			ps.setString(2, pass);
-			ps.setString(3, name);
-			ps.setString(4, mob);
-			ps.setString(5, add);
-			ps.setString(6, gen);
-			ps.setString(7, city);
+			ps.setString(1, "101");
+			ps.setString(2, email);
+			ps.setString(3, pass);
+			ps.setString(4, name);
+			ps.setString(5, mob);
+			ps.setString(6, add);
+			ps.setString(7, gen);
+			ps.setString(8, city);
+			ps.setString(9, "java");
+			ps.setString(10, "Tobedecide");
+			ps.setString(11, "Tobedecide");
+			ps.setString(12, "Tobedecide");
+			ps.setString(13, "Tobedecide");
+			//ps.setString(10, "Tobedecide");
 			int i=ps.executeUpdate();
 			if(i>0)
 			{

@@ -5,20 +5,21 @@
 <%
 
 
-String id=request.getParameter("id");
+String email=request.getParameter("id");
 String pwd=request.getParameter("pwd");
 
-String qr="select * from user where id=? and pass=?";
+String qr="select * from user where email=? and pass=?";
 PreparedStatement ps=con.prepareStatement(qr);
 
-ps.setString(1, id);
+ps.setString(1, email);
 ps.setString(2, pwd);
 ResultSet rs=ps.executeQuery();
 
 if(rs.next())
 { 		
-		
-		response.sendRedirect("UserPanel.jsp");
+	session=request.getSession();
+	session.setAttribute("email", email);
+	response.sendRedirect("UserPanel.jsp");
 		
 		
 		
